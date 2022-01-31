@@ -169,11 +169,14 @@ void randomguess1(int x)
 
 }
 
+
 int i=2;
+
 
 int randomguess2to10(int y,int guessno2)
 {
 
+    
     int m = guessno2;
     const int n = y;
     int inputno;
@@ -188,14 +191,14 @@ int randomguess2to10(int y,int guessno2)
         if (inputno > n)
         {
             printf("\nYour number is BIGGER\n\n");
-            i++;
+            ++i;
             randomguess2to10(n,inputno);
         }
 
         else if (inputno < n)
         {
             printf("\nYour number is SMALLER\n\n");
-            i++;
+            ++i;
             randomguess2to10(n,inputno);
         }
 
@@ -208,14 +211,26 @@ int randomguess2to10(int y,int guessno2)
         }
     }
 
-    else
+
+    else if (i==10)
     {
-        printf("\n\nYOU LOSE :(\n\n");
+        if (inputno == n)
+        {
+            printf("VOILA! You have guessed it right! %d was the number!\n\n",n);
+            printf("!!! WELL DONE !!!\n\n\n");
 
-        printf("%d was the number!\n\n",n);
-        printf("!!! BETTER LUCK NEXT TIME !!!\n\n\n");
+            gameendmessage(n);
+        }
 
-        gameendmessage(n);
+        else
+        {
+            printf("\n\nYOU LOSE :(\n\n");
+
+            printf("%d was the number!\n\n",n);
+            printf("!!! BETTER LUCK NEXT TIME !!!\n\n\n");
+
+            gameendmessage(n);
+        }
     }
 
     return 0;
