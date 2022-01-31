@@ -126,7 +126,7 @@ int machinepicksnumber()
     srand(time(0));
 
     int i;
-    i = (rand()%100);
+    i = (rand()%100); //rand()%num where num is the upper range
 
     int j=i;
 
@@ -206,6 +206,8 @@ int randomguess2to10(int y,int guessno2)
         {
             printf("\n\nVOILA! You have guessed it right! %d was the number!\n\n",n);
             printf("!!! WELL DONE !!!\n\n\n");
+
+            i=2;
 
             gameendmessage(n);
         }
