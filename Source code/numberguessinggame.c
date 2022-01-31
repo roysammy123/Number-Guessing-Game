@@ -54,7 +54,7 @@ void understandrules()
 
     else if ((strcmp(yesno,"No") == 0) || (strcmp(yesno,"no") == 0) || (strcmp(yesno,"NO") == 0))
     {
-        printf("Since you haven't understood the rules them, please take a look at them again below:\n\n");
+        printf("\n\nSince you haven't understood the rules, please take a look at them again below:\n\n");
         rulesdisplay();
         understandrules();
     }
@@ -161,7 +161,7 @@ void randomguess1(int x)
 
     else if (guessno == x)
     {
-        printf("\nVOILA! You have guessed it right! %d was the number!\n\n",x);
+        printf("\n\nVOILA! You have guessed it right! %d was the number!\n\n",x);
         printf("!!! WELL DONE !!!\n\n\n");
 
         gameendmessage(x);
@@ -191,20 +191,20 @@ int randomguess2to10(int y,int guessno2)
         if (inputno > n)
         {
             printf("\nYour number is BIGGER\n\n");
-            ++i;
+            i++;
             randomguess2to10(n,inputno);
         }
 
         else if (inputno < n)
         {
             printf("\nYour number is SMALLER\n\n");
-            ++i;
+            i++;
             randomguess2to10(n,inputno);
         }
 
         else if (inputno == n)
         {
-            printf("VOILA! You have guessed it right! %d was the number!\n\n",n);
+            printf("\n\nVOILA! You have guessed it right! %d was the number!\n\n",n);
             printf("!!! WELL DONE !!!\n\n\n");
 
             gameendmessage(n);
@@ -216,8 +216,10 @@ int randomguess2to10(int y,int guessno2)
     {
         if (inputno == n)
         {
-            printf("VOILA! You have guessed it right! %d was the number!\n\n",n);
+            printf("\n\nVOILA! You have guessed it right! %d was the number!\n\n",n);
             printf("!!! WELL DONE !!!\n\n\n");
+
+            i=2;
 
             gameendmessage(n);
         }
@@ -228,6 +230,8 @@ int randomguess2to10(int y,int guessno2)
 
             printf("%d was the number!\n\n",n);
             printf("!!! BETTER LUCK NEXT TIME !!!\n\n\n");
+
+            i=2;
 
             gameendmessage(n);
         }
